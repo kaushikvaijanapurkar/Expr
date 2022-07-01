@@ -1,5 +1,5 @@
 {
-  "name": "heroku-mock-endpoint",
+  "name": "heroku-api-endpoint",
   "version": "0.0.1",
   "description": "Heroku Example - Api Point",
   "main": "server.js",
