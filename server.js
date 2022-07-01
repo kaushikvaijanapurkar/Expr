@@ -10,126 +10,126 @@ app.use(bodyParser.json());
 // https://your-heroku-app-name.herokuapp.com/api-endpoint
 app.get('/BankWizard', function(request, response) {
     
-      var jsonContent = {
-    "responseHeader": {
-        "requestType": "Bankwizard",
-        "clientReferenceId": "DM_RB-2",
-        "expRequestId": "RB000097410794",
-        "messageTime": "2022-05-18T14:39:43Z",
-        "overallResponse": {
-            "decision": "CONTINUE",
-            "decisionText": "Continue",
-            "decisionReasons": [
-                "exact match on person, highly probable match on address, bank account matched"
-            ],
-            "recommendedNextActions": [],
-            "spareObjects": []
-        },
-        "responseCode": "R0201",
-        "responseType": "INFO",
-        "responseMessage": "Workflow Complete.",
-        "tenantID": "X241B4TY"
+      var jsonContent = '{
+  "responseHeader": {
+    "requestType": "Bankwizard",
+    "clientReferenceId": "DM_RB-2",
+    "expRequestId": "RB000097410794",
+    "messageTime": "2022-05-18T14:39:43Z",
+    "overallResponse": {
+      "decision": "CONTINUE",
+      "decisionText": "Continue",
+      "decisionReasons": [
+        "exact match on person, highly probable match on address, bank account matched"
+      ],
+      "recommendedNextActions": [],
+      "spareObjects": []
     },
-    "clientResponsePayload": {
-        "orchestrationDecisions": [
-            {
-                "sequenceId": "1",
-                "decisionSource": "BankWizard",
-                "decision": "ACCEPT",
-                "decisionReasons": [
-                    "exact match on person, highly probable match on address, bank account matched"
-                ],
-                "score": 0,
-                "decisionText": "Continue",
-                "nextAction": "Continue",
-                "decisionTime": "2022-05-18T14:04:08Z"
-            }
+    "responseCode": "R0201",
+    "responseType": "INFO",
+    "responseMessage": "Workflow Complete.",
+    "tenantID": "X241B4TY"
+  },
+  "clientResponsePayload": {
+    "orchestrationDecisions": [
+      {
+        "sequenceId": "1",
+        "decisionSource": "BankWizard",
+        "decision": "ACCEPT",
+        "decisionReasons": [
+          "exact match on person, highly probable match on address, bank account matched"
         ],
-        "decisionElements": [
-            {
-                "serviceName": "Bankwizard",
-                "applicantId": "APPLICANT_1",
-                "decision": "Match",
-                "decisionText": "",
-                "warningsErrors": [],
-                "matches": [
-                    {
-                        "name": "Account owner",
-                        "value": "Match"
-                    }
-                ],
-                "scores": [
-                    {
-                        "name": "Personal details",
-                        "score": 9,
-                        "type": "SCORE"
-                    },
-                    {
-                        "name": "Address",
-                        "score": 9,
-                        "type": "SCORE"
-                    }
-                ]
-            }
+        "score": 0,
+        "decisionText": "Continue",
+        "nextAction": "Continue",
+        "decisionTime": "2022-05-18T14:04:08Z"
+      }
+    ],
+    "decisionElements": [
+      {
+        "serviceName": "Bankwizard",
+        "applicantId": "APPLICANT_1",
+        "decision": "Match",
+        "decisionText": "",
+        "warningsErrors": [],
+        "matches": [
+          {
+            "name": "Account owner",
+            "value": "Match"
+          }
+        ],
+        "scores": [
+          {
+            "name": "Personal details",
+            "score": 9,
+            "type": "SCORE"
+          },
+          {
+            "name": "Address",
+            "score": 9,
+            "type": "SCORE"
+          }
         ]
+      }
+    ]
+  },
+  "originalRequestData": {
+    "application": {
+      "applicants": [
+        {
+          "applicantType": "APPLICANT",
+          "consent": true,
+          "contactId": "MAINCONTACT_1",
+          "id": "APPLICANT_1",
+          "knownCustomer": true,
+          "type": "INDIVIDUAL"
+        }
+      ]
     },
-    "originalRequestData": {
-        "application": {
-            "applicants": [
-                {
-                    "applicantType": "APPLICANT",
-                    "consent": true,
-                    "contactId": "MAINCONTACT_1",
-                    "id": "APPLICANT_1",
-                    "knownCustomer": true,
-                    "type": "INDIVIDUAL"
-                }
-            ]
+    "contacts": [
+      {
+        "addresses": [
+          {
+            "addressType": "Current",
+            "buildingNumber": "1",
+            "countryCode": "GBR",
+            "id": "MainAppAddress_1",
+            "postal": "PA756PB",
+            "street": "ARnYLL TERRACE"
+          }
+        ],
+        "bankAccount": {
+          "clearAccountNumber": "00136076",
+          "id": "MainBankAccount_1",
+          "sortCode": "070116",
+          "type": "Single"
         },
-        "contacts": [
+        "id": "MainContact_1",
+        "person": {
+          "names": [
             {
-                "addresses": [
-                    {
-                        "addressType": "Current",
-                        "buildingNumber": "1",
-                        "countryCode": "GBR",
-                        "id": "MainAppAddress_1",
-                        "postal": "PA756PB",
-                        "street": "ARnYLL TERRACE"
-                    }
-                ],
-                "bankAccount": {
-                    "clearAccountNumber": "00136076",
-                    "id": "MainBankAccount_1",
-                    "sortCode": "070116",
-                    "type": "Single"
-                },
-                "id": "MainContact_1",
-                "person": {
-                    "names": [
-                        {
-                            "firstName": "MARK",
-                            "id": "MainPersonName_1",
-                            "surName": "ADOLFSON",
-                            "type": "Current"
-                        }
-                    ],
-                    "personDetails": {
-                        "dateOfBirth": "1984-10-28"
-                    },
-                    "typeOfPerson": "Applicant"
-                }
+              "firstName": "MARK",
+              "id": "MainPersonName_1",
+              "surName": "ADOLFSON",
+              "type": "Current"
             }
-        ],
-        "control": [
-            {
-                "option": "MODEL_CODE",
-                "value": "MODELA"
-            }
-        ],
-        "source": "WEB"
-    }
-};
+          ],
+          "personDetails": {
+            "dateOfBirth": "1984-10-28"
+          },
+          "typeOfPerson": "Applicant"
+        }
+      }
+    ],
+    "control": [
+      {
+        "option": "MODEL_CODE",
+        "value": "MODELA"
+      }
+    ],
+    "source": "WEB"
+  }
+}';
     
     response.send(JSON.parse(JSON.stringify(jsonContent)));
 });
