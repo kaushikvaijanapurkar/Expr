@@ -1,7 +1,7 @@
 {
-  "name": "Api Endpoint",
-  "description": "Heroku Example - Api Endpoint",
-  "repository": "https://github.com/KinGwaL/Api-Endpoint",
+  "name": "ExprMock",
+  "description": "Heroku Example - Mock",
+  "repository": "https://github.com/kaushikvaijanapurkar/Expr",
   "success_url": "/api-endpoint",
   "env": {
     "PGSSLMODE": {
